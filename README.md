@@ -61,4 +61,6 @@ Developed by Abhishek Mandal.
 
 License
 
-This project is open-source and free to use under the MIT License.
+Deployed Link
+
+https://cute-cobbler-5ef833.netlify.app/
