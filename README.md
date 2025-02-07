@@ -15,9 +15,9 @@ The Form Designer is a simple, interactive web application that allows users to 
 
 ## Project Structure
 form-designer/ 
-│── index.html # Main structure of the form designer 
-│── styles.css # Styling for the UI 
-│── script.js # JavaScript logic for dynamic interactions
+- index.html # Main structure of the form designer 
+- styles.css # Styling for the UI 
+- script.js # JavaScript logic for dynamic interactions
 
 ## Tech Stack
 HTML
