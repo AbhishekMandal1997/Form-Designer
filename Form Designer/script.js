@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
         label.classList.add("element-label");
 
         let input;
-
         if (type === "input") {
             input = document.createElement("input");
             input.type = "text";
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         element.appendChild(label);
         element.appendChild(input);
         element.appendChild(deleteBtn);
-
         formPreview.appendChild(element);
 
         formElements.push({ id, type, label: label.value, placeholder: input.placeholder });
@@ -62,7 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     saveButton.addEventListener("click", function () {
-        console.log(JSON.stringify(formElements, null, 2));
+        alert("Form saved successfully!");
+        formPreview.innerHTML = "";
+        formElements = [];
     });
 
     formPreview.addEventListener("dragstart", function (e) {

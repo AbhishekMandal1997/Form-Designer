@@ -1,240 +1,416 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f4f4f4;
-    padding: 20px;
-    transition: background 0.3s, color 0.3s;
-    min-height: 100vh;
+    height: 100vh;
+    background-color: #f4f4f4;
+    transition: background 0.3s ease-in-out;
 }
 
 .container {
     display: flex;
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
-    background: white;
-    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    flex-wrap: wrap;
+    overflow: hidden;
 }
 
+/* Sidebar */
 .sidebar {
     width: 250px;
-    min-width: 220px;
-    padding: 15px;
-    background: #2c3e50;
+    background: #333;
     color: white;
-    border-radius: 8px 0 0 8px;
+    padding: 20px;
 }
 
 .sidebar h2 {
-    text-align: center;
+    font-size: 18px;
     margin-bottom: 15px;
-    font-size: 20px;
 }
 
 .add-component {
     display: block;
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-bottom: 10px;
-    background: #3498db;
+    background: #555;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 .add-component:hover {
-    background: #2980b9;
+    background: #777;
 }
 
+/* Form Area */
 .form-area {
-    flex: 1;
+    flex-grow: 1;
     padding: 20px;
-    background: #ffffff;
-    border-radius: 0 8px 8px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-#form-preview {
-    width: 100%;
-    max-width: 600px;
-    min-height: 300px;
-    background: #fafafa;
-    padding: 15px;
-    border: 2px dashed #bbb;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-}
-
-.form-element {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    background: #ecf0f1;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
-.delete-btn {
-    cursor: pointer;
-    color: red;
-    font-size: 18px;
-    font-weight: bold;
-    transition: transform 0.2s ease;
-}
-
-.delete-btn:hover {
-    transform: scale(1.2);
+.form-area h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
 .form-buttons {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    top: 20px;
+    right: 20px;
 }
 
 .form-buttons button {
-    padding: 10px 14px;
+    margin-left: 10px;
+    padding: 8px 15px;
     border: none;
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
-    transition: background 0.3s;
-    color: white;
+    transition: 0.3s;
 }
 
 #saveForm {
-    background: #2ecc71;
+    background: #007bff;
+    color: white;
 }
 
 #saveForm:hover {
-    background: #27ae60;
-}
-
-#previewButton {
-    background: #f39c12;
-}
-
-#previewButton:hover {
-    background: #e67e22;
+    background: #0056b3;
 }
 
 #darkModeToggle {
-    background: #34495e;
+    background: #444;
+    color: white;
 }
 
 #darkModeToggle:hover {
-    background: #2c3e50;
+    background: #222;
 }
 
+#previewButton {
+    background: #28a745;
+    color: white;
+}
+
+#previewButton:hover {
+    background: #1e7e34;
+}
+
+
+#form-preview {
+    min-height: 300px;
+    border: 2px dashed #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.element-label {
+    border: none;
+    padding: 5px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.delete-btn {
+    color: red;
+    cursor: pointer;
+    font-size: 18px;
+    align-self: flex-end;
+}
+
+/* Dark Mode */
 .dark-mode {
-    background: #1e1e1e;
+    background: #222;
     color: white;
 }
 
 .dark-mode .container {
-    background: #2c3e50;
-    color: white;
-}
-
-.dark-mode .sidebar {
-    background: #1a252f;
-}
-
-.dark-mode .form-area {
-    background: #2c3e50;
+    background: #333;
 }
 
 .dark-mode #form-preview {
-    background: #1e1e1e;
-    border-color: #444;
+    background: #444;
+    border-color: #666;
 }
 
-@media (max-width: 1024px) {
+.dark-mode .form-element {
+    background: #555;
+    color: white;
+}
+
+.dark-mode .element-label {
+    background: transparent;
+    color: white;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 0 20px;
+    }
+
     .container {
+        width: 90%;
+        max-width: 800px;
+        display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
         padding: 15px;
     }
 
     .sidebar {
         width: 100%;
-        border-radius: 8px 8px 0 0;
+        padding: 15px;
         text-align: center;
     }
 
+    .add-component {
+        padding: 12px;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
     .form-area {
-        border-radius: 0 0 8px 8px;
+        width: 100%;
         padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-buttons {
+        position: relative;
+        top: auto;
+        right: auto;
+        text-align: center;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .form-buttons button {
+        padding: 10px;
+        font-size: 14px;
+        min-width: 150px;
+    }
+
+    #form-preview {
+        width: 100%;
+        max-width: 600px;
+        min-height: 350px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fafafa;
+    }
+
+    .form-element {
+        width: 100%;
+        max-width: 500px;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .element-label {
+        font-size: 14px;
+    }
+
+    #saveForm,
+    #darkModeToggle,
+    #previewButton {
+        width: 100%;
+        max-width: 250px;
     }
 }
 
 @media (max-width: 768px) {
+    body {
+        display: block;
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+    }
+
     .sidebar {
         width: 100%;
-        padding: 10px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .sidebar h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .add-component {
+        padding: 12px;
+        font-size: 14px;
+        margin-bottom: 8px;
     }
 
     .form-area {
-        padding: 10px;
+        padding: 15px;
+        width: 100%;
     }
 
     .form-buttons {
-        justify-content: center;
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .form-buttons button {
+        margin: 5px 5px;
+        padding: 10px;
+        font-size: 14px;
+        width: auto;
+    }
+
+    #form-preview {
+        min-height: 300px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-element {
+        width: 100%;
+        max-width: 400px;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .element-label {
+        font-size: 14px;
+    }
+
+    #saveForm,
+    #darkModeToggle,
+    #previewButton {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
     .sidebar {
         padding: 10px;
-        text-align: center;
+        width: 100%;
+        font-size: 14px;
     }
 
-    .form-area {
-        padding: 10px;
+    .form-area h2 {
+        font-size: 18px;
     }
 
-    #form-preview {
-        padding: 10px;
-    }
-
-    .form-buttons {
-        flex-direction: column;
-        gap: 5px;
-        align-items: center;
+    .add-component {
+        padding: 8px;
     }
 
     .form-buttons button {
-        width: 100%;
-        font-size: 12px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    #form-preview {
+        min-height: 200px;
         padding: 8px;
+    }
+
+    .form-element {
+        padding: 8px;
+    }
+
+    .delete-btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .sidebar {
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .form-area h2 {
+        font-size: 18px;
+    }
+
+    .add-component {
+        padding: 8px;
+    }
+
+    .form-buttons button {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    #form-preview {
+        min-height: 200px;
+        padding: 8px;
+    }
+
+    .form-element {
+        padding: 8px;
+    }
+
+    .delete-btn {
+        font-size: 16px;
     }
 }
