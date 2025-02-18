@@ -33,5 +33,5 @@ Javascript
 
 Deployed Link
 
-https://cute-cobbler-5ef833.netlify.app/
+https://cerulean-palmier-98bc0c.netlify.app/
 
